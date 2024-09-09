@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_PORTfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8b37350e7f.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script> -->
+</head>
+
+<body>
+
+    <i class="arrow" style="color: #eaeaeb;"></i>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo" alt="Sahil.">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#aboutme">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </nav>
+            <div class="headertext">
+                <p>An undergraduate</p>
+                <h1>Hi, I am <span class="red">Sahil</span> from <br><a class='bits'
+                        href="https://www.bits-pilani.ac.in/hyderabad/" target=”_blank” attribute></a> Hyd</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ABOUT -->
+    <div id="aboutme">
+        <div class="container">
+            <div class="row">
+                <div class="column_1">
+                    <img src="images/user.png" alt="USER">
+                </div>
+                <div class="column_2">
+                    <h1 class="sub_title">About me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quibusdam,
+                        reiciendis earum et a reprehenderit error dolores voluptatibus nesciunt officia facere vel
+                        laboriosam illo quae velit ex numquam quam ducimus.</p>
+                    <div class="tab_titles">
+                        <p class="tab_links active_link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab_links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab_links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab_content active_tab" id="skills">
+                        <ul>
+                            <li><span>Web Dev</span>
+                                <p>Designing Web Applications</p>
+                            </li>
+                            <li><span>DSA</span>
+                                <p></p>Data Structures & Algorithms
+                            </li>
+                            <li><span>Graphic Designer</span>
+                                <p>Designing Digital contents</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_content" id="experience">
+                        <ul>
+                            <li><span>2022 - 2023</span>
+                                <p>Design team member at Embryo , Blocksoc(Intracollege Clubs)</p>
+                            </li>
+                            <li><span>2022 - Present</span>
+                                <p></p>Freelancing
+                            </li>
+                            <li><span>2023(May) - 2023(July)</span>
+                                <p>Internship at AlmaConnect</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_content" id="education">
+                        <ul>
+                            <li><span>2021 - Present</span>
+                                <p>B.E. in E.C.E</p>
+                            </li>
+                            <li><span>2022 - Present</span>
+                                <p></p>Minor in Computing & Intelligence
+                            </li>
+                            <li><span>2022- Present</span>
+                                <p>Youtube + Codecademy + Coursera</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="column_left">
+                    <h1>Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane" style="color: #c80e68;"></i> sahi14somil@gmail.com</p>
+                    <div class="social_icons">
+                        <a href="https://www.facebook.com/sahil.somil.1" target=”_blank” attribute><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ssa_hill_/" target=”_blank” attribute><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sahil-somil-117941240/" target=”_blank” attribute><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/SILENTswami" target=”_blank” attribute><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                    <button class="bt"><a href="images/my-cv.pdf" download>Download Cv</a></button>
+                </div>
+                <div class="column_right">
+                    <p id="message"></p>
+                    <form name="submit-to-google-sheet" id="myForm" onsubmit="validateForm(event)">
+                        <input id="form_1" type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="Email" placeholder="Your mail" required>
+                        <textarea name="message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="bt2">Submit</button>
+                    </form>
+                    <p id="message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER-->
+    <div id="footer">
+     <p>Portfolio made by love ❤️</p>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName('tab_links');
+        var tabcontent = document.getElementsByClassName('tab_content');
+
+        function opentab(element) {
+            for (link of tablinks) {
+                link.classList.remove("active_link");
+            }
+            for (cont of tabcontent) {
+                cont.classList.remove("active_tab");
+            }
+            event.currentTarget.classList.add("active_link");
+            document.getElementById(element).classList.add("active_tab");
+        }
+
+        function validateForm(event) {
+            event.preventDefault(); // Prevents the form from submitting by default
+
+            var inputFieldValue = document.getElementById('form_1').value;
+            var messageElement = document.getElementById('message');
+
+            if (inputFieldValue.trim() === '') {
+                // Display a message when the input is empty
+                messageElement.textContent = 'Please enter a value in the input field.';
+            } else {
+                // Clear the message and allow the form submission
+                messageElement.textContent = '';
+                // Perform any other actions or submit the form as needed
+                document.getElementById('myForm').submit();
+            }
+        }
+    </script>
+
+    <script>
+        //form wali bckcdi
+
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbxxpXQK6_9WDHHff9WzuH0jHneN10mZZ2qsB_aVBvJ89Iz7_7i6m41-z97kgbYyNG_p/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
